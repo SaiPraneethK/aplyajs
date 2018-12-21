@@ -1,17 +1,21 @@
 // (example) Write a function that accepts two number arguments and adds them
 // together.
-var add = function () {
+var add = function (a,b) {
+    return a+b
 };
 
+console.log(add(1,2))
 
 // Create a function that takes in a cost and a quantity and outputs the total
 // pre-tax cost for that quantity of items at the given price. For example
 //
 //     var preTaxTotal = totalCost(5, 5.99); // 5 items at 5.99
 //     //=> 29.950000000000003
-var totalCost = function () {
+var totalCost = function (quantity,cost) {
+    return quantity * cost
 };
 
+console.log(totalCost(5,5.99))
 
 // Write a function that takes a rank and a suit as input, and returns a string
 // representation of a card. For example, it should behave as follows
@@ -21,9 +25,11 @@ var totalCost = function () {
 //
 //     cardString("queen", "hearts");
 //     //=> queen of hearts
-var cardString = function () {
+var cardString = function (rank,suit) {
+    return rank + " of " + suit
 };
 
+console.log(cardString("ace","spades"))
 
 // Write a function called `openTag` that accepts a tag name and returns an
 // opening HTML tag with that tag name. For example,
@@ -33,9 +39,11 @@ var cardString = function () {
 //
 //     openTag("div");
 //     //=> <div>
-var openTag = function () {
+var openTag = function (tag) {
+    return "<"+tag+">"
 };
 
+console.log(openTag("p"))
 
 // Similarly, write a function called `closingTag` that returns the closing HTML tag
 // with that name.
@@ -45,9 +53,11 @@ var openTag = function () {
 //
 //     closeTag("div");
 //     //=> </div>
-var closeTag = function () {
+var closeTag = function (tag) {
+    return "</"+tag+">"
 };
 
+console.log(closeTag("p"))
 
 // Write a function called `toTagString` that accepts two inputs: a tag name,
 // and the string content, and returns the content tagged with the specified
@@ -62,5 +72,8 @@ var closeTag = function () {
 //
 // Although I won't be testing for this, your code should re-use the functions that
 // you created in the previous section.
-var toTagString = function () {
+var toTagString = function (tag,string) {
+    return openTag(tag)+string+closeTag(tag)
 };
+
+console.log(toTagString('div','Hello world !'))
